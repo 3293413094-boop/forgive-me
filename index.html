@@ -322,6 +322,7 @@
       'QQ图片20260415163954.gif',
       'QQ图片20260415163958.gif',
     ];
+    let gifVersion = 0;
 
     let denyScale = 1;
     let agreeScale = 1;
@@ -348,7 +349,9 @@
       denyBtn.style.opacity = '1';
       agreeBtn.style.transform = `translate(-50%, -50%) scale(${agreeScale})`;
 
-      artImg.src = denyGifs[(clicks - 1) % denyGifs.length];
+      const nextGif = denyGifs[(clicks - 1) % denyGifs.length];
+      gifVersion += 1;
+      artImg.src = `${nextGif}?v=${gifVersion}`;
 
       denyBtn.textContent = clicks > 4 ? '再点我一下' : '不要';
     });
