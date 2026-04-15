@@ -36,6 +36,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      touch-action: pan-x;
     }
 
     .scene {
@@ -49,6 +53,7 @@
       text-align: center;
       padding: 28px 18px 40px;
       transition: transform 180ms ease;
+      min-width: 1000px;
     }
 
     .scene::before {
@@ -264,7 +269,13 @@
     }
 
     @media (max-width: 520px) {
-      .scene { min-height: 430px; }
+      html, body { overflow: hidden; }
+      .page {
+        overflow-x: auto;
+        overflow-y: hidden;
+        justify-content: flex-start;
+      }
+      .scene { min-height: 430px; min-width: 1000px; align-items: center; }
       .buttons { width: 100%; height: 180px; }
       .agree {
         width: 92px;
