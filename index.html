@@ -266,6 +266,7 @@
       transform: translateX(-50%);
       font-size: 12px;
       opacity: 0.45;
+      display: none;
     }
 
     @media (max-width: 520px) {
@@ -344,7 +345,7 @@
       clicks += 1;
       agreeScale = Math.min(12, agreeScale * 1.38);
 
-      const denyShift = 70 + (clicks * 100);
+      const denyShift = 70 + (clicks * 80);
       const agreeShift = 70;
       const denyTopShift = Math.min(28, clicks * 4);
       const sceneLift = Math.min(90, (agreeScale - 1) * 18);
